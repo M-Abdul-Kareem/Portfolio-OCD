@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Admin · Muhammad Abdul Kareem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin_Style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════ LOGIN SCREEN ══════════════════════ -->
+  <div class="login-screen" id="loginScreen">
+    <form class="login-card" id="loginForm" autocomplete="off">
+      <div class="login-logo">Abdul<span>Kareem</span></div>
+      <p class="login-sub">Portfolio Admin</p>
+
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" autocomplete="username" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required />
+      </div>
+
+      <p class="login-error" id="loginError"></p>
+
+      <button type="submit" class="btn-primary" id="loginBtn">Log In →</button>
+    </form>
+  </div>
+
+  <!-- ══════════════════════ DASHBOARD SHELL ══════════════════════ -->
+  <div class="dashboard" id="dashboard" hidden>
+
+    <aside class="sidebar">
+      <div class="sidebar-logo">Abdul<span>Kareem</span></div>
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-panel="hero">🏠 Hero</button>
+        <button class="nav-item" data-panel="about">👤 About</button>
+        <button class="nav-item" data-panel="skills">⚙️ Skills</button>
+        <button class="nav-item" data-panel="experience">🎓 Experience</button>
+        <button class="nav-item" data-panel="projects">💼 Projects</button>
+        <button class="nav-item" data-panel="contact-info">📇 Contact Info</button>
+        <button class="nav-item" data-panel="messages">✉️ Messages <span class="badge" id="msgBadge" hidden>0</span></button>
+        <button class="nav-item" data-panel="account">🔐 Account</button>
+      </nav>
+      <button class="logout-btn" id="logoutBtn">⎋ Log Out</button>
+    </aside>
+
+    <main class="content">
+
+      <!-- toast -->
+      <div class="toast" id="toast"></div>
+
+      <!-- ── HERO PANEL ── -->
+      <section class="panel" id="panel-hero">
+        <h1>Hero Section</h1>
+        <p class="panel-sub">This is the first thing visitors see on your site.</p>
+        <form id="heroForm" class="content-form">
+          <div class="form-row-2">
+            <div class="form-group"><label for="hero_name1">Name (line 1)</label><input type="text" id="hero_name1" required /></div>
+            <div class="form-group"><label for="hero_name2">Name (line 2)</label><input type="text" id="hero_name2" required /></div>
+          </div>
+          <div class="form-group"><label for="hero_badge">Badge text</label><input type="text" id="hero_badge" /></div>
+          <div class="form-group">
+            <label for="hero_roles">Typing roles (one per line)</label>
+            <textarea id="hero_roles" rows="4" placeholder="Full Stack Developer&#10;Backend Engineer"></textarea>
+          </div>
+          <div class="form-group"><label for="hero_bio">Bio</label><textarea id="hero_bio" rows="3"></textarea></div>
+          <div class="form-row-2">
+            <div class="form-group"><label for="hero_email">Email</label><input type="email" id="hero_email" /></div>
+            <div class="form-group"><label for="hero_phone">Phone</label><input type="text" id="hero_phone" /></div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group"><label for="hero_li_label">LinkedIn label</label><input type="text" id="hero_li_label" /></div>
+            <div class="form-group"><label for="hero_li_url">LinkedIn URL</label><input type="text" id="hero_li_url" /></div>
+          </div>
+          <button type="submit" class="btn-primary">Save Hero Section</button>
+        </form>
+      </section>
+
+      <!-- ── ABOUT PANEL ── -->
+      <section class="panel" id="panel-about" hidden>
+        <h1>About Section</h1>
+        <p class="panel-sub">Your story and quick facts.</p>
+
+        <div class="content-form photo-upload-card">
+          <div class="form-group">
+            <label for="photoInput">Profile Photo</label>
+            <div class="photo-upload-row">
+              <div class="photo-preview" id="photoPreview">
+                <span id="photoPreviewEmoji">👨‍💻</span>
+                <img id="photoPreviewImg" src="" alt="Profile photo preview" hidden />
+              </div>
+              <div class="photo-upload-controls">
+                <input type="file" id="photoInput" accept="image/jpeg,image/png,image/webp,image/gif" hidden />
+                <button type="button" class="btn-secondary" id="photoUploadBtn">Choose Photo…</button>
+                <p class="photo-upload-hint">JPEG, PNG, WEBP or GIF · max 5MB</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form id="aboutForm" class="content-form">
+          <div class="form-group"><label for="about_heading">Heading</label><input type="text" id="about_heading" required /></div>
+          <div class="form-group">
+            <label for="about_paragraphs">Paragraphs (one per line)</label>
+            <textarea id="about_paragraphs" rows="6"></textarea>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group"><label for="about_degree">Degree</label><input type="text" id="about_degree" /></div>
+            <div class="form-group"><label for="about_semester">Semester</label><input type="text" id="about_semester" /></div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group"><label for="about_cgpa">CGPA</label><input type="text" id="about_cgpa" /></div>
+            <div class="form-group"><label for="about_location">Location</label><input type="text" id="about_location" /></div>
+          </div>
+          <button type="submit" class="btn-primary">Save About Section</button>
+        </form>
+      </section>
+
+      <!-- ── SKILLS PANEL ── -->
+      <section class="panel" id="panel-skills" hidden>
+        <div class="panel-header-row">
+          <div>
+            <h1>Skills</h1>
+            <p class="panel-sub">Skill category cards shown on your site.</p>
+          </div>
+          <button class="btn-primary btn-sm" id="addSkillBtn">+ Add Category</button>
+        </div>
+        <div class="cards-list" id="skillsList"></div>
+      </section>
+
+      <!-- ── EXPERIENCE PANEL ── -->
+      <section class="panel" id="panel-experience" hidden>
+        <div class="panel-header-row">
+          <div>
+            <h1>Experience</h1>
+            <p class="panel-sub">Timeline entries for education & work.</p>
+          </div>
+          <button class="btn-primary btn-sm" id="addExpBtn">+ Add Entry</button>
+        </div>
+        <div class="cards-list" id="experienceList"></div>
+      </section>
+
+      <!-- ── PROJECTS PANEL ── -->
+      <section class="panel" id="panel-projects" hidden>
+        <div class="panel-header-row">
+          <div>
+            <h1>Projects</h1>
+            <p class="panel-sub">Project cards shown on your site.</p>
+          </div>
+          <button class="btn-primary btn-sm" id="addProjectBtn">+ Add Project</button>
+        </div>
+        <div class="cards-list" id="projectsList"></div>
+      </section>
+
+      <!-- ── CONTACT INFO PANEL ── -->
+      <section class="panel" id="panel-contact-info" hidden>
+        <h1>Contact Info</h1>
+        <p class="panel-sub">Static details shown in the Contact section.</p>
+        <form id="contactInfoForm" class="content-form">
+          <div class="form-row-2">
+            <div class="form-group"><label for="ci_email">Email</label><input type="email" id="ci_email" /></div>
+            <div class="form-group"><label for="ci_phone">Phone</label><input type="text" id="ci_phone" /></div>
+          </div>
+          <div class="form-group"><label for="ci_location">Location</label><input type="text" id="ci_location" /></div>
+          <div class="form-row-2">
+            <div class="form-group"><label for="ci_li_label">LinkedIn label</label><input type="text" id="ci_li_label" /></div>
+            <div class="form-group"><label for="ci_li_url">LinkedIn URL</label><input type="text" id="ci_li_url" /></div>
+          </div>
+          <button type="submit" class="btn-primary">Save Contact Info</button>
+        </form>
+      </section>
+
+      <!-- ── MESSAGES PANEL ── -->
+      <section class="panel" id="panel-messages" hidden>
+        <h1>Contact Messages</h1>
+        <p class="panel-sub">Messages submitted through your live contact form.</p>
+        <div class="messages-list" id="messagesList"></div>
+      </section>
+
+      <!-- ── ACCOUNT PANEL ── -->
+      <section class="panel" id="panel-account" hidden>
+        <h1>Account Security</h1>
+        <p class="panel-sub">Change your admin username, password, or notification email. Requires your current password and an emailed verification code.</p>
+        <form id="accountForm" class="content-form">
+          <div class="form-group">
+            <label for="acc_current_password">Current Password</label>
+            <input type="password" id="acc_current_password" autocomplete="current-password" required />
+          </div>
+          <div class="form-group">
+            <label for="acc_new_username">New Username <span class="field-optional">(leave blank to keep current)</span></label>
+            <input type="text" id="acc_new_username" autocomplete="username" />
+          </div>
+          <div class="form-group">
+            <label for="acc_new_password">New Password <span class="field-optional">(leave blank to keep current, min. 8 characters)</span></label>
+            <input type="password" id="acc_new_password" autocomplete="new-password" minlength="8" />
+          </div>
+          <button type="submit" class="btn-primary">Update Credentials</button>
+        </form>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ══════════════════════ EDIT MODAL (shared by Skills/Experience/Projects) ══════════════════════ -->
+  <div class="modal-overlay" id="modalOverlay" hidden>
+    <div class="modal" id="modalBox">
+      <h2 id="modalTitle">Edit</h2>
+      <form id="modalForm"></form>
+    </div>
+  </div>
+
+  <!-- ══════════════════════ 2FA VERIFICATION MODAL ══════════════════════
+       Separate from the edit modal above so it can stack on top of it —
+       e.g. saving an edit triggers this while the edit modal is still open. -->
+  <div class="modal-overlay twofa-overlay" id="twoFAOverlay" hidden>
+    <div class="modal twofa-modal">
+      <h2>🔐 Verification Required</h2>
+      <p class="twofa-message" id="twoFAMessage"></p>
+      <form id="twoFAForm">
+        <div class="form-group">
+          <label for="twoFACodeInput">6-digit code</label>
+          <input
+            type="text"
+            id="twoFACodeInput"
+            inputmode="numeric"
+            pattern="[0-9]*"
+            maxlength="6"
+            autocomplete="off"
+            placeholder="000000"
+            required
+          />
+        </div>
+        <p class="twofa-error" id="twoFAError"></p>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" id="twoFACancelBtn">Cancel</button>
+          <button type="submit" class="btn-primary">Confirm</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="admin_Script.js"></script>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Muhammad Abdul Kareem — Full Stack Developer & Software Engineering Student based in Lahore, Pakistan." />
+  <title>Muhammad Abdul Kareem · Full Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+<!-- CSS -->
+  <link rel="stylesheet" href="index_Style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- HEADER -->
+  <header>
+    <nav aria-label="Primary navigation">
+      <a href="#" class="logo">Abdul<span>Kareem</span></a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+          <span class="theme-icon moon" aria-hidden="true">🌙</span>
+          <span class="theme-icon sun"  aria-hidden="true">☀️</span>
+        </button>
+        <a href="mailto:m.abdulkareem.5122006@gmail.com" class="btn-hire" id="hireBtn">Hire Me</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+      <a href="#about"><span aria-hidden="true">👤</span> About</a>
+      <a href="#skills"><span aria-hidden="true">⚙️</span> Skills</a>
+      <a href="#experience"><span aria-hidden="true">🎓</span> Experience</a>
+      <a href="#projects"><span aria-hidden="true">💼</span> Projects</a>
+      <a href="#contact" class="mobile-cta"><span aria-hidden="true">✉️</span> Contact</a>
+    </nav>
+  </header>
+  <div class="menu-backdrop" id="menuBackdrop" aria-hidden="true"></div>
+
+<!-- MAIN -->
+  <main id="main">
+
+<!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-inner">
+        <div class="hero-badge">
+          <span class="dot" aria-hidden="true"></span>
+          <span id="heroBadgeText">Available for opportunities</span>
+        </div>
+
+        <h1 id="hero-heading">
+          <span id="heroName1">Muhammad</span><br>
+          <span class="highlight" id="heroName2">Abdul Kareem</span>
+        </h1>
+
+        <p class="hero-role">
+          I'm a <span class="typed-text" id="typed" aria-live="polite"></span><span class="cursor" aria-hidden="true"></span>
+        </p>
+
+        <p class="hero-bio" id="heroBio">
+          Software Engineering student at PUCIT, Lahore — building robust backends, clean databases, and interfaces that make data meaningful.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View My Work →</a>
+          <a href="#contact"  class="btn btn-outline">Get In Touch</a>
+        </div>
+
+        <div class="hero-links" id="heroLinks">
+          <a href="mailto:m.abdulkareem.5122006@gmail.com" aria-label="Send email" id="heroEmailLink">
+            ✉ m.abdulkareem.5122006@gmail.com
+          </a>
+          <a href="https://linkedin.com/in/m-abdul-kareem" target="_blank" rel="noopener" aria-label="LinkedIn profile" id="heroLinkedinLink">
+            🔗 LinkedIn
+          </a>
+          <a href="tel:+923072029749" aria-label="Phone number" id="heroPhoneLink">
+            📞 +92 307 202 9749
+          </a>
+        </div>
+      </div>
+    </section>
+
+<!-- ABOUT -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-avatar" id="aboutAvatar" role="img" aria-label="Muhammad Abdul Kareem avatar">
+            <span id="aboutAvatarEmoji">👨‍💻</span>
+            <img id="aboutAvatarImg" src="" alt="Muhammad Abdul Kareem" hidden />
+          </div>
+          <div class="about-text reveal">
+            <p class="section-eyebrow">About Me</p>
+            <div class="section-divider" aria-hidden="true"></div>
+            <h2 class="section-title" id="about-heading">Turning data into decisions</h2>
+            <div id="aboutParagraphs">
+              <p>I'm a 6th semester Software Engineering student at Punjab University College of Information and Technology, Lahore. My passion lies at the intersection of backend engineering and data — designing systems that store, process, and surface information reliably.</p>
+              <p>I have hands-on experience with ASP.NET Core, SQL Server, and data pipelines, and I'm actively growing toward full-stack development. I also hold Teaching Assistance experience in Mobile Application Development.</p>
+            </div>
+            <div class="about-info" aria-label="Personal details">
+              <div class="info-item">
+                <div class="info-label">Degree</div>
+                <div class="info-value" id="aboutDegree">BSc Software Engineering</div>
+              </div>
+              <div class="info-item">
+                <div class="info-label">Semester</div>
+                <div class="info-value" id="aboutSemester">6th (2023 – 2027)</div>
+              </div>
+              <div class="info-item">
+                <div class="info-label">CGPA</div>
+                <div class="info-value" id="aboutCgpa">3.1 / 4.0</div>
+              </div>
+              <div class="info-item">
+                <div class="info-label">Location</div>
+                <div class="info-value" id="aboutLocation">Lahore, Pakistan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- SKILLS -->
+    <section class="skills" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <p class="section-eyebrow">What I Know</p>
+        <div class="section-divider" aria-hidden="true"></div>
+        <h2 class="section-title" id="skills-heading">Skills & Technologies</h2>
+        <p class="section-intro">A growing toolkit across languages, data, and backend systems.</p>
+
+        <div class="skills-grid" id="skillsGrid">
+          <article class="skill-card reveal">
+            <div class="skill-card-icon" aria-hidden="true">💻</div>
+            <h3>Programming Languages</h3>
+            <div class="skill-tags" role="list">
+              <span class="tag" role="listitem">Python</span>
+              <span class="tag" role="listitem">C</span>
+              <span class="tag" role="listitem">C++</span>
+              <span class="tag" role="listitem">C#</span>
+              <span class="tag" role="listitem">Kotlin</span>
+              <span class="tag" role="listitem">OOP</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-card-icon" aria-hidden="true">🗄️</div>
+            <h3>Databases</h3>
+            <div class="skill-tags" role="list">
+              <span class="tag" role="listitem">SQL</span>
+              <span class="tag" role="listitem">SQL Server</span>
+              <span class="tag" role="listitem">Relational Design</span>
+              <span class="tag" role="listitem">Data Querying</span>
+              <span class="tag" role="listitem">Reporting</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-card-icon" aria-hidden="true">⚙️</div>
+            <h3>Frameworks & Libraries</h3>
+            <div class="skill-tags" role="list">
+              <span class="tag" role="listitem">ASP.NET Core</span>
+              <span class="tag" role="listitem">Entity Framework Core</span>
+              <span class="tag" role="listitem">Dapper</span>
+              <span class="tag" role="listitem">.NET</span>
+              <span class="tag" role="listitem">Pandas</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-card-icon" aria-hidden="true">📊</div>
+            <h3>Data Tools</h3>
+            <div class="skill-tags" role="list">
+              <span class="tag" role="listitem">Pandas</span>
+              <span class="tag" role="listitem">Microsoft Excel</span>
+              <span class="tag" role="listitem">ETL Concepts</span>
+              <span class="tag" role="listitem">Data Cleaning</span>
+              <span class="tag" role="listitem">CRUD Operations</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-card-icon" aria-hidden="true">🔧</div>
+            <h3>Developer Tools</h3>
+            <div class="skill-tags" role="list">
+              <span class="tag" role="listitem">Git</span>
+              <span class="tag" role="listitem">GitHub</span>
+              <span class="tag" role="listitem">VS Code</span>
+              <span class="tag" role="listitem">Visual Studio</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-card-icon" aria-hidden="true">🏗️</div>
+            <h3>Software Engineering</h3>
+            <div class="skill-tags" role="list">
+              <span class="tag" role="listitem">Requirements Analysis</span>
+              <span class="tag" role="listitem">SDLC</span>
+              <span class="tag" role="listitem">System Design</span>
+              <span class="tag" role="listitem">Auth & Authorization</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+<!-- EXPERIENCE / EDUCATION -->
+    <section class="experience" id="experience" aria-labelledby="experience-heading">
+      <div class="container">
+        <p class="section-eyebrow">Background</p>
+        <div class="section-divider" aria-hidden="true"></div>
+        <h2 class="section-title" id="experience-heading">Education & Experience</h2>
+        <p class="section-intro">Building knowledge through structured learning and real hands-on work.</p>
+
+        <div class="timeline" id="timelineList" role="list">
+          <article class="timeline-item reveal" role="listitem">
+            <div class="timeline-meta">
+              <span class="timeline-date">2023 – 2027</span>
+            </div>
+            <h3>Bachelor's in Software Engineering</h3>
+            <p class="timeline-org">Punjab University College of Information and Technology — Lahore, Pakistan</p>
+            <ul aria-label="Education details">
+              <li>Currently in 6th Semester, CGPA: 3.1 / 4.0</li>
+              <li>Teaching Assistant in Mobile Application Development (Kotlin, Android)</li>
+              <li>Core coursework: SDLC, System Design, Database Systems, OOP</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item reveal" role="listitem">
+            <div class="timeline-meta">
+              <span class="timeline-date">2025 – 2026</span>
+            </div>
+            <h3>MediCare Clinic Management System</h3>
+            <p class="timeline-org">Semester Project · Full Stack Development</p>
+            <ul aria-label="Project responsibilities">
+              <li>Designed and managed a relational SQL Server database for healthcare data across patients, doctors, and appointments</li>
+              <li>Built interactive analytics dashboards for doctors and administrators</li>
+              <li>Implemented data validation pipelines for patient and appointment record integrity</li>
+              <li>Used Dapper for high-performance SQL querying and fast reporting</li>
+              <li>Developed role-based access control and real-time notifications via SignalR</li>
+            </ul>
+            <div class="timeline-tools" aria-label="Technologies used">
+              <span class="tool-tag">ASP.NET Core 8</span>
+              <span class="tool-tag">C#</span>
+              <span class="tool-tag">Entity Framework</span>
+              <span class="tool-tag">Dapper</span>
+              <span class="tool-tag">SQL Server</span>
+              <span class="tool-tag">SignalR</span>
+              <span class="tool-tag">Razor Views</span>
+              <span class="tool-tag">Bootstrap</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+<!-- PROJECTS -->
+    <section class="projects" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <p class="section-eyebrow">What I've Built</p>
+        <div class="section-divider" aria-hidden="true"></div>
+        <h2 class="section-title" id="projects-heading">Projects</h2>
+        <p class="section-intro">Real problems, real solutions — built from scratch with attention to data integrity and user experience.</p>
+
+        <div class="projects-grid" id="projectsGrid">
+          <article class="project-card reveal">
+            <div class="project-header">
+              <div class="project-icon" aria-hidden="true">🏥</div>
+              <div class="project-links">
+                <a href="#" aria-label="View MediCare project on GitHub">GitHub ↗</a>
+              </div>
+            </div>
+            <div>
+              <div class="project-period">2025 – 2026</div>
+              <h3>MediCare Clinic Management System</h3>
+            </div>
+            <p>A full-featured clinic management platform with role-based access, real-time SignalR notifications, analytics dashboards, and a high-performance data layer using Dapper and SQL Server.</p>
+            <div class="skill-tags">
+              <span class="tag">ASP.NET Core</span>
+              <span class="tag">SQL Server</span>
+              <span class="tag">SignalR</span>
+              <span class="tag">Dapper</span>
+              <span class="tag">C#</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-header">
+              <div class="project-icon" aria-hidden="true">🌐</div>
+              <div class="project-links">
+                <a href="#" aria-label="View portfolio source code">GitHub ↗</a>
+              </div>
+            </div>
+            <div>
+              <div class="project-period">2026</div>
+              <h3>This Portfolio</h3>
+            </div>
+            <p>A responsive, accessible portfolio built with pure HTML5, CSS3, and vanilla JavaScript. Features dark/light mode, scroll animations, form validation, and a mobile-first layout — no frameworks.</p>
+            <div class="skill-tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Responsive</span>
+              <span class="tag">WCAG</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+<!-- CONTACT -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <p class="section-eyebrow">Let's Talk</p>
+        <div class="section-divider" aria-hidden="true"></div>
+        <h2 class="section-title" id="contact-heading">Get In Touch</h2>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <h3>Open to opportunities</h3>
+            <p>Whether it's an internship, project collaboration, or just a conversation about tech — I'd love to hear from you.</p>
+
+            <div class="contact-items" id="contactItems">
+              <div class="contact-item">
+                <div class="contact-item-icon" aria-hidden="true">✉️</div>
+                <div class="contact-item-text">
+                  <div class="contact-item-label">Email</div>
+                  <div class="contact-item-value" id="ciEmailValue">m.abdulkareem.5122006@gmail.com</div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon" aria-hidden="true">📞</div>
+                <div class="contact-item-text">
+                  <div class="contact-item-label">Phone</div>
+                  <div class="contact-item-value" id="ciPhoneValue">+92 307 202 9749</div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon" aria-hidden="true">📍</div>
+                <div class="contact-item-text">
+                  <div class="contact-item-label">Location</div>
+                  <div class="contact-item-value" id="ciLocationValue">Lahore, Pakistan</div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon" aria-hidden="true">🔗</div>
+                <div class="contact-item-text">
+                  <div class="contact-item-label">LinkedIn</div>
+                  <div class="contact-item-value" id="ciLinkedinValue">M Abdul Kareem</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+<!-- Contact Form with JS validation -->
+          <div class="reveal">
+            <div class="form-success" id="formSuccess" role="alert">
+              ✅ Message sent! I'll get back to you soon.
+            </div>
+            <div class="form-error-banner" id="formErrorBanner" role="alert" hidden></div>
+            <div class="contact-form" id="contactForm" role="form" aria-label="Contact form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fname">First Name</label>
+                  <input type="text" id="fname" name="fname" placeholder="John" autocomplete="given-name" />
+                  <span class="form-error" id="fnameError">Please enter your first name.</span>
+                </div>
+                <div class="form-group">
+                  <label for="lname">Last Name</label>
+                  <input type="text" id="lname" name="lname" placeholder="Doe" autocomplete="family-name" />
+                  <span class="form-error" id="lnameError">Please enter your last name.</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" />
+                <span class="form-error" id="emailError">Please enter a valid email address.</span>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Internship opportunity" />
+                <span class="form-error" id="subjectError">Please enter a subject.</span>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell me about the opportunity or project..."></textarea>
+                <span class="form-error" id="messageError">Please write a message (at least 20 characters).</span>
+              </div>
+              <button type="button" class="btn-submit" id="submitBtn">Send Message →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+<!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Abdul<span>Kareem</span></div>
+      <p class="footer-copy">© 2026 Muhammad Abdul Kareem · Built with HTML5, CSS3 & JS</p>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="mailto:m.abdulkareem.5122006@gmail.com">Email</a>
+      </nav>
+    </div>
+  </footer>
+
+<!-- JavaScript -->
+  <script src="index_Script.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Environment variables — never commit real secrets
+.env
+
+# Database — local data, never belongs in git
+*.db
+*.sqlite
+*.sqlite3
+
+# Uploaded user content — keep the folder structure, not the actual files
+Backend/app/static/uploads/*
+!Backend/app/static/uploads/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Python cache / test artifacts
+.pytest_cache/
+.mypy_cache/
