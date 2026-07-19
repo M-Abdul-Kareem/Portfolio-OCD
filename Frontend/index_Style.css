@@ -752,7 +752,6 @@
       max-width: 780px;
       margin: 0 auto;
     }
-
     @media (min-width: 560px) {
       .contact-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
@@ -804,28 +803,6 @@
       word-break: break-word;
       line-height: 1.4;
     }
-
-    .contact-cta {
-      display: flex;
-      justify-content: center;
-      margin-top: 2.75rem;
-    }
-
-    .btn-submit {
-      background: var(--cyan);
-      color: var(--bg);
-      font-family: var(--font-body);
-      font-weight: 700;
-      font-size: .95rem;
-      padding: .9rem 2.25rem;
-      border-radius: 50px;
-      border: none;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-      transition: opacity .2s, transform .15s;
-    }
-    .btn-submit:hover { opacity: .85; transform: translateY(-2px); }
 
     /* ═══════════════════════════════════════════════
        FOOTER
