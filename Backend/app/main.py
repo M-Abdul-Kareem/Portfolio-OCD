@@ -44,7 +44,7 @@ app = FastAPI(
 # the browser. Restrict allow_origins to your real domain in production.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://m-abdul-kareem.github.io"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

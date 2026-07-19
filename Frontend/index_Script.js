@@ -2,7 +2,7 @@
    CONFIG — point this at your running backend.
    Change this when you deploy the API somewhere other than localhost.
    ════════════════════════════════════════════════════════════ */
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "https://abdulkareem-portfolio.duckdns.org";
 
 /* ── 1. THEME TOGGLE ──────────────────────── (unchanged from before) */
 const html         = document.documentElement;

@@ -1,7 +1,7 @@
 /* ════════════════════════════════════════════════════════════
    CONFIG — change this to your deployed API URL when you host it.
    ════════════════════════════════════════════════════════════ */
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "https://abdulkareem-portfolio.duckdns.org";
 
 /* ── Auth token is kept in sessionStorage: cleared when the
    browser tab closes, but survives a page refresh while working. ── */
