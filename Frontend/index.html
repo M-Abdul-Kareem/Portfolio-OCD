@@ -325,81 +325,33 @@
         <p class="section-eyebrow">Let's Talk</p>
         <div class="section-divider" aria-hidden="true"></div>
         <h2 class="section-title" id="contact-heading">Get In Touch</h2>
+        <p class="contact-lead reveal">Whether it's an internship, project collaboration, or just a conversation about tech — I'd love to hear from you.</p>
 
-        <div class="contact-grid">
-          <div class="contact-info reveal">
-            <h3>Open to opportunities</h3>
-            <p>Whether it's an internship, project collaboration, or just a conversation about tech — I'd love to hear from you.</p>
-
-            <div class="contact-items" id="contactItems">
-              <div class="contact-item">
-                <div class="contact-item-icon" aria-hidden="true">✉️</div>
-                <div class="contact-item-text">
-                  <div class="contact-item-label">Email</div>
-                  <div class="contact-item-value" id="ciEmailValue">m.abdulkareem.5122006@gmail.com</div>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-item-icon" aria-hidden="true">📞</div>
-                <div class="contact-item-text">
-                  <div class="contact-item-label">Phone</div>
-                  <div class="contact-item-value" id="ciPhoneValue">+92 307 202 9749</div>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-item-icon" aria-hidden="true">📍</div>
-                <div class="contact-item-text">
-                  <div class="contact-item-label">Location</div>
-                  <div class="contact-item-value" id="ciLocationValue">Lahore, Pakistan</div>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-item-icon" aria-hidden="true">🔗</div>
-                <div class="contact-item-text">
-                  <div class="contact-item-label">LinkedIn</div>
-                  <div class="contact-item-value" id="ciLinkedinValue">M Abdul Kareem</div>
-                </div>
-              </div>
-            </div>
+        <div class="contact-cards reveal" id="contactItems">
+          <a class="contact-card" id="ciEmailCard" href="mailto:m.abdulkareem.5122006@gmail.com" aria-label="Email Muhammad Abdul Kareem">
+            <div class="contact-card-icon" aria-hidden="true">✉️</div>
+            <div class="contact-card-label">Email</div>
+            <div class="contact-card-value" id="ciEmailValue">m.abdulkareem.5122006@gmail.com</div>
+          </a>
+          <a class="contact-card" id="ciPhoneCard" href="tel:+923072029749" aria-label="Call Muhammad Abdul Kareem">
+            <div class="contact-card-icon" aria-hidden="true">📞</div>
+            <div class="contact-card-label">Phone</div>
+            <div class="contact-card-value" id="ciPhoneValue">+92 307 202 9749</div>
+          </a>
+          <div class="contact-card contact-card-static">
+            <div class="contact-card-icon" aria-hidden="true">📍</div>
+            <div class="contact-card-label">Location</div>
+            <div class="contact-card-value" id="ciLocationValue">Lahore, Pakistan</div>
           </div>
+          <a class="contact-card" id="ciLinkedinCard" href="#" target="_blank" rel="noopener noreferrer" aria-label="Muhammad Abdul Kareem on LinkedIn">
+            <div class="contact-card-icon" aria-hidden="true">🔗</div>
+            <div class="contact-card-label">LinkedIn</div>
+            <div class="contact-card-value" id="ciLinkedinValue">M Abdul Kareem</div>
+          </a>
+        </div>
 
-<!-- Contact Form with JS validation -->
-          <div class="reveal">
-            <div class="form-success" id="formSuccess" role="alert">
-              ✅ Message sent! I'll get back to you soon.
-            </div>
-            <div class="form-error-banner" id="formErrorBanner" role="alert" hidden></div>
-            <div class="contact-form" id="contactForm" role="form" aria-label="Contact form">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="fname">First Name</label>
-                  <input type="text" id="fname" name="fname" placeholder="John" autocomplete="given-name" />
-                  <span class="form-error" id="fnameError">Please enter your first name.</span>
-                </div>
-                <div class="form-group">
-                  <label for="lname">Last Name</label>
-                  <input type="text" id="lname" name="lname" placeholder="Doe" autocomplete="family-name" />
-                  <span class="form-error" id="lnameError">Please enter your last name.</span>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" />
-                <span class="form-error" id="emailError">Please enter a valid email address.</span>
-              </div>
-              <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" placeholder="Internship opportunity" />
-                <span class="form-error" id="subjectError">Please enter a subject.</span>
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Tell me about the opportunity or project..."></textarea>
-                <span class="form-error" id="messageError">Please write a message (at least 20 characters).</span>
-              </div>
-              <button type="button" class="btn-submit" id="submitBtn">Send Message →</button>
-            </div>
-          </div>
+        <div class="contact-cta reveal">
+          <a href="mailto:m.abdulkareem.5122006@gmail.com" class="btn-submit" id="emailCtaBtn">Say Hello →</a>
         </div>
       </div>
     </section>

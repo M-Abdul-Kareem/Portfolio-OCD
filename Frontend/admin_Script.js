@@ -715,67 +715,6 @@ async function deleteProject(id) {
 }
 
 /* ════════════════════════════════════════════════════════════
-   MESSAGES PANEL
-   ════════════════════════════════════════════════════════════ */
-async function loadMessages() {
-  const messages = await api("/api/messages", { auth: true });
-  const list = document.getElementById("messagesList");
-  const badge = document.getElementById("msgBadge");
-
-  const unreadCount = messages.filter(m => !m.is_read).length;
-  if (unreadCount > 0) {
-    badge.hidden = false;
-    badge.textContent = unreadCount;
-  } else {
-    badge.hidden = true;
-  }
-
-  if (messages.length === 0) {
-    list.innerHTML = `<div class="empty-state">No messages yet. They'll appear here when someone uses your contact form.</div>`;
-    return;
-  }
-
-  list.innerHTML = messages.map(m => `
-    <div class="message-card ${m.is_read ? "" : "unread"}" data-id="${m.id}">
-      <div class="message-top">
-        <div>
-          <div class="message-from">${escapeHtml(m.first_name)} ${escapeHtml(m.last_name)}</div>
-          <div class="message-email">${escapeHtml(m.email)}</div>
-        </div>
-        <div class="message-date">${new Date(m.created_at).toLocaleString()}</div>
-      </div>
-      <div class="message-subject">${escapeHtml(m.subject)}</div>
-      <div class="message-body">${escapeHtml(m.message)}</div>
-      <div class="list-card-actions">
-        ${!m.is_read ? `<button class="btn-secondary" data-read="${m.id}">Mark as read</button>` : ""}
-        <button class="btn-danger" data-delmsg="${m.id}">Delete</button>
-      </div>
-    </div>
-  `).join("");
-
-  list.querySelectorAll("[data-read]").forEach(btn =>
-    btn.addEventListener("click", () => markMessageRead(btn.dataset.read)));
-  list.querySelectorAll("[data-delmsg]").forEach(btn =>
-    btn.addEventListener("click", () => deleteMessage(btn.dataset.delmsg)));
-}
-
-async function markMessageRead(id) {
-  try {
-    await api(`/api/messages/${id}/read`, { method: "PATCH", auth: true });
-    loadMessages();
-  } catch (err) { toast(err.message, true); }
-}
-
-async function deleteMessage(id) {
-  if (!confirm("Delete this message?")) return;
-  try {
-    await api(`/api/messages/${id}`, { method: "DELETE", auth: true });
-    toast("Message deleted.");
-    loadMessages();
-  } catch (err) { toast(err.message, true); }
-}
-
-/* ════════════════════════════════════════════════════════════
    UTILITIES
    ════════════════════════════════════════════════════════════ */
 function escapeHtml(str) {
@@ -847,7 +786,6 @@ async function loadAllPanels() {
     loadExperience(),
     loadProjects(),
     loadContactInfo(),
-    loadMessages(),
   ];
 
   const results = await Promise.allSettled(loads);

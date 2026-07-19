@@ -287,15 +287,20 @@ async function loadContactInfo() {
 
   if (info.email) {
     document.getElementById('ciEmailValue').textContent = info.email;
+    document.getElementById('ciEmailCard').href = "mailto:" + info.email;
   }
   if (info.phone) {
     document.getElementById('ciPhoneValue').textContent = info.phone;
+    document.getElementById('ciPhoneCard').href = "tel:" + info.phone.replace(/[^+\d]/g, "");
   }
   if (info.location) {
     document.getElementById('ciLocationValue').textContent = info.location;
   }
   if (info.linkedin_label) {
     document.getElementById('ciLinkedinValue').textContent = info.linkedin_label;
+  }
+  if (info.linkedin_url) {
+    document.getElementById('ciLinkedinCard').href = info.linkedin_url;
   }
 }
 
@@ -319,78 +324,3 @@ async function loadAllContent() {
 
 loadAllContent();
 
-
-/* ════════════════════════════════════════════════════════════
-   7. CONTACT FORM — now submits for real via POST /api/messages
-   ════════════════════════════════════════════════════════════ */
-const submitBtn = document.getElementById('submitBtn');
-const formErrorBanner = document.getElementById('formErrorBanner');
-
-function validate(id, errorId, check) {
-  const field = document.getElementById(id);
-  const error = document.getElementById(errorId);
-  const valid = check(field.value.trim());
-  field.classList.toggle('error', !valid);
-  error.classList.toggle('visible', !valid);
-  return valid;
-}
-
-submitBtn.addEventListener('click', async () => {
-  formErrorBanner.hidden = true;
-
-  const v1 = validate('fname',   'fnameError',   v => v.length > 0);
-  const v2 = validate('lname',   'lnameError',   v => v.length > 0);
-  const v3 = validate('email',   'emailError',   v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
-  const v4 = validate('subject', 'subjectError', v => v.length > 0);
-  const v5 = validate('message', 'messageError', v => v.length >= 20);
-
-  if (!(v1 && v2 && v3 && v4 && v5)) return;  // stop here if invalid
-
-  const payload = {
-    first_name: document.getElementById('fname').value.trim(),
-    last_name:  document.getElementById('lname').value.trim(),
-    email:      document.getElementById('email').value.trim(),
-    subject:    document.getElementById('subject').value.trim(),
-    message:    document.getElementById('message').value.trim(),
-  };
-
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Sending…';
-
-  try {
-    const res = await fetch(API_BASE + "/api/messages", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-
-    if (!res.ok) {
-      // Server responded, but rejected the request (e.g. validation error)
-      const data = await res.json().catch(() => ({}));
-      const msg = Array.isArray(data.detail)
-        ? data.detail.map(d => d.msg).join(", ")
-        : (data.detail || "Something went wrong. Please try again.");
-      throw new Error(msg);
-    }
-
-    // Success
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('formSuccess').classList.add('visible');
-
-  } catch (err) {
-    // Network failure (server down) or validation failure from above
-    formErrorBanner.textContent = "⚠ Couldn't send your message: " + err.message;
-    formErrorBanner.hidden = false;
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'Send Message →';
-  }
-});
-
-// Clear error on input
-['fname','lname','email','subject','message'].forEach(id => {
-  document.getElementById(id).addEventListener('input', () => {
-    document.getElementById(id).classList.remove('error');
-    document.getElementById(id + 'Error').classList.remove('visible');
-  });
-});
